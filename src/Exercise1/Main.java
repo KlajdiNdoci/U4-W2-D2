@@ -10,7 +10,6 @@ public class Main {
         try {
             System.out.print("Inserisci il numero di parole da inserire (N): ");
             int N = Integer.parseInt(input.nextLine());
-            input.nextLine();
 
             Set<String> words = new HashSet<>();
             List<String> duplicateWords = new ArrayList<>();
