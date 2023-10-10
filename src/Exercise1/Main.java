@@ -9,7 +9,7 @@ public class Main {
 
         try {
             System.out.print("Inserisci il numero di parole da inserire (N): ");
-            int N = input.nextInt();
+            int N = Integer.parseInt(input.nextLine());
             input.nextLine();
 
             Set<String> words = new HashSet<>();
@@ -34,7 +34,8 @@ public class Main {
             for (String word : words) {
                 System.out.println(word);
             }
-
+        } catch (NumberFormatException ex) {
+            System.err.println("Hai inserito un valore non numerico");
         } catch (Exception ex) {
             System.err.println("Errore generico: " + ex.getMessage());
         } finally {
