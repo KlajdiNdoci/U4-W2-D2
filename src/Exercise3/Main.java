@@ -15,8 +15,10 @@ public class Main {
         System.out.println(rubricaTelefonica);
 
 
-        System.out.println(rubricaTelefonica.ottieniContatto(304590278));
+        System.out.println(rubricaTelefonica.ottieniContattoPerTelefono(304590278));
+        rubricaTelefonica.ottieniTelefonoPerNome("giacomo");
 
+        rubricaTelefonica.stampaRubrica();
     }
 
 

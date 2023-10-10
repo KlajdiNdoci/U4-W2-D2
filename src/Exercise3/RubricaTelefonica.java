@@ -25,7 +25,17 @@ public class RubricaTelefonica {
         rubrica.remove(nome);
     }
 
-    public String ottieniContatto(long telefono) {
+    public void ottieniTelefonoPerNome(String nome) {
+        System.out.println(rubrica.get(nome));
+    }
+
+    public void stampaRubrica() {
+        for (Map.Entry<String, Long> entry : rubrica.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+    }
+
+    public String ottieniContattoPerTelefono(long telefono) {
         for (Map.Entry<String, Long> entry : rubrica.entrySet()) {
             if (entry.getValue() == telefono) {
                 return entry.getKey();
