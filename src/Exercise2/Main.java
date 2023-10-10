@@ -19,11 +19,15 @@ public class Main {
                 System.out.println(number);
             }
             System.out.println("Lista ordinata + lista inversa:");
-            List<Integer> reversedList = reverseList(integerList);
+            List<Integer> reversedList = new ArrayList<>(reverseList(integerList));
 
             for (Integer number : reversedList) {
                 System.out.println(number);
             }
+            System.out.println("numeri pari");
+            printOddOrEven(true, integerList);
+            System.out.println("numeri dispari");
+            printOddOrEven(false, integerList);
 
 
         } catch (NumberFormatException ex) {
@@ -45,9 +49,21 @@ public class Main {
     }
 
     public static List<Integer> reverseList(List<Integer> integerList) {
-        List<Integer> reversedList = new ArrayList<>(integerList);
-        Collections.reverse(reversedList);
-        integerList.addAll(reversedList);
-        return integerList;
+        List<Integer> newList = new ArrayList<>(integerList);
+        Collections.reverse(integerList);
+        newList.addAll(integerList);
+        return newList;
+    }
+
+    public static void printOddOrEven(boolean b, List<Integer> integerList) {
+        for (int i = 0; i < integerList.size(); i++) {
+            int currentNumber = integerList.get(i);
+            if (b && currentNumber % 2 == 0) {
+                System.out.println(currentNumber);
+            } else if (!b && currentNumber % 2 != 0) {
+                System.out.println(currentNumber);
+            }
+        }
     }
 }
+
